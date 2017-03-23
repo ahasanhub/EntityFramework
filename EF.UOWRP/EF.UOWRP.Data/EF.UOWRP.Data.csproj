@@ -53,6 +53,13 @@
     <Compile Include="Core\Domain\Course.cs" />
     <Compile Include="Core\Domain\Cover.cs" />
     <Compile Include="Core\Domain\Tag.cs" />
+    <Compile Include="Migrations\201703221736134_first.cs" />
+    <Compile Include="Migrations\201703221736134_first.Designer.cs">
+      <DependentUpon>201703221736134_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\CourseConfiguration.cs" />
+    <Compile Include="Persistence\PlutoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +67,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Persistence\" />
+    <EmbeddedResource Include="Migrations\201703221736134_first.resx">
+      <DependentUpon>201703221736134_first.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
