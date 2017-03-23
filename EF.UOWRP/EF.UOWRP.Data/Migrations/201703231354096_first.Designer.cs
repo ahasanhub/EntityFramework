@@ -13,7 +13,7 @@ namespace EF.UOWRP.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201703230608493_first"; }
+            get { return "201703231354096_first"; }
         }
         
         string IMigrationMetadata.Source

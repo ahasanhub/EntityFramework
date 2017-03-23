@@ -53,15 +53,21 @@
     <Compile Include="Core\Domain\Course.cs" />
     <Compile Include="Core\Domain\Cover.cs" />
     <Compile Include="Core\Domain\Tag.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IAuthorRepository.cs" />
+    <Compile Include="Core\Repositories\ICourseRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
-    <Compile Include="Migrations\201703230608493_first.cs" />
-    <Compile Include="Migrations\201703230608493_first.Designer.cs">
-      <DependentUpon>201703230608493_first.cs</DependentUpon>
+    <Compile Include="Migrations\201703231354096_first.cs" />
+    <Compile Include="Migrations\201703231354096_first.Designer.cs">
+      <DependentUpon>201703231354096_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CourseConfiguration.cs" />
     <Compile Include="Persistence\PlutoContext.cs" />
+    <Compile Include="Persistence\Repositories\AuthorRepository.cs" />
+    <Compile Include="Persistence\Repositories\CourseRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
+    <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,8 +75,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703230608493_first.resx">
-      <DependentUpon>201703230608493_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703231354096_first.resx">
+      <DependentUpon>201703231354096_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
