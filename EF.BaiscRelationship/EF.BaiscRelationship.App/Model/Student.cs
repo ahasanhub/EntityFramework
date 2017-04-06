@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EF.BaiscRelationship.App.Model
 {
     public class Student
     {
+        public Student()
+        {
+            StudentAddresses=new HashSet<StudentAddress>();
+            Subjects = new HashSet<Subject>();
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
         public virtual StudentAccount StudentAccount { get; set; }
-        public ICollection<StudentAddress> StudentAddresses { get; set; }
+        public virtual ICollection<StudentAddress> StudentAddresses { get; set; }
+        public virtual ICollection<Subject> Subjects { get; set; }
+
     }
     public class StudentAccount
     {
@@ -35,5 +38,20 @@ namespace EF.BaiscRelationship.App.Model
         public int StudentId { get; set; }
 
         public virtual Student Student { get; set; }
+    }
+    public class Subject
+    {
+        public Subject()
+        {
+            Students = new HashSet<Student>();
+
+        }
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+
+        public virtual ICollection<Student> Students { get; set; }
+        
     }
 }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using EF.BaiscRelationship.App.Data;
 using EF.BaiscRelationship.App.Model;
 
@@ -13,7 +9,7 @@ namespace EF.BaiscRelationship.App
     {
         static void Main(string[] args)
         {
-            CreateStudent2();
+            CreateStudent3();
             Console.WriteLine("Student Creatred");
 
             StudentContext c = new StudentContext();
@@ -83,5 +79,26 @@ namespace EF.BaiscRelationship.App
                 c.SaveChanges();
             }
         }
+
+        static void CreateStudent3()
+        {
+            Student s = new Student
+            {
+                Age = 12,
+                Name = "Foo"
+            };
+
+            Subject s1 = new Subject {  Name = "Phy" };
+            Subject s2 = new Subject {  Name = "Maths" };
+            s.Subjects.Add(s1);
+            s.Subjects.Add(s2);
+
+            using (StudentContext c = new StudentContext())
+            {
+                c.Students.Add(s);
+                c.SaveChanges();
+            }
+        }
+
     }
 }
